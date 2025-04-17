@@ -1,0 +1,66 @@
+.notifications {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+  }
+  
+  .notifications h3 {
+    color: var(--primary-dark);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .notification-list {
+    max-height: 200px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  
+  .notification-list.expanded {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  .notification-item {
+    padding: 0.75rem;
+    margin: 0.25rem 0;
+    border-left: 3px solid var(--primary-light);
+    border-radius: 4px;
+    list-style-type: none;
+    transition: all 0.2s ease;
+  }
+  
+  .notification-item.unread {
+    background-color: rgba(156, 39, 176, 0.08);
+    border-left-width: 4px;
+  }
+  
+  .notification-message {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+  }
+  
+  .notification-time {
+    font-size: 0.8rem;
+    color: #666;
+  }
+  
+  .no-notifications {
+    color: #666;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .see-more-btn {
+    /* ... (keep your existing button styles) ... */
+    margin-top: 0.75rem;
+  }
+  
+  /* Keep your existing scrollbar styles */

@@ -1,0 +1,54 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // User documents - owner access + admin management
+    match /users/{userId} {
+      allow create: if request.auth != null;
+      allow read, update, delete: if 
+        request.auth.uid == userId || 
+        isAdmin();
+      
+      // Subcollections inherit parent permissions
+      match /{subcollection=**} {
+        allow read, write: if request.auth.uid == userId;
+      }
+    }
+
+    // Admin management
+    match /admins/{adminId} {
+      allow read, write: if isSuperAdmin();
+    }
+
+    // Payment workflow
+    match /pendingPayments/{paymentId} {
+      allow create: if 
+        request.auth != null &&
+        request.resource.data.userId == request.auth.uid;
+      
+      allow read: if 
+        request.auth.uid == resource.data.userId || 
+        isAdmin();
+      
+      allow update: if 
+        isAdmin() && 
+        request.resource.data.status == "verified" && 
+        resource.data.status == "pending";
+    }
+
+    // Dashboard-specific access
+    match /dashboard/{document=**} {
+      allow read: if request.auth != null;
+    }
+
+    // Helper functions must be inside the service block
+    function isAdmin() {
+      let adminDoc = get(/databases/$(database)/documents/admins/$(request.auth.uid));
+      return adminDoc.exists && (adminDoc.data.role == "admin" || adminDoc.data.role == "superadmin");
+    }
+
+    function isSuperAdmin() {
+      let adminDoc = get(/databases/$(database)/documents/admins/$(request.auth.uid));
+      return adminDoc.exists && adminDoc.data.role == "superadmin";
+    }
+  }
+}

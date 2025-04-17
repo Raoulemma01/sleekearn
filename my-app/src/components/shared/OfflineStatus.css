@@ -1,0 +1,35 @@
+.offline-status {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #ff9800;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  
+  .offline-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .offline-icon {
+    font-size: 1.2em;
+  }
+  
+  .offline-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #616161;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    z-index: 1000;
+  }

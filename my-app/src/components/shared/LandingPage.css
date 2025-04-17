@@ -1,0 +1,94 @@
+/* src/components/shared/LandingPage.css */
+.landing-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #6a0dad, #9c27b0);
+    color: white;
+    padding: 2rem;
+  }
+  
+  .landing-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .landing-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .landing-subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+  }
+  
+  .landing-content {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .landing-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 300px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+  }
+  
+  .landing-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .landing-button.primary {
+    background: #ff9800;
+    color: #121212;
+  }
+  
+  .landing-button.secondary {
+    background: transparent;
+    border: 2px solid #ff9800;
+    color: #ff9800;
+  }
+  
+  .landing-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .landing-footer {
+    text-align: center;
+    margin-top: auto;
+  }
+  
+  .text-link {
+    color: #ff9800;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .text-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .landing-content {
+      flex-direction: column;
+    }
+    
+    .landing-title {
+      font-size: 2rem;
+    }
+  }

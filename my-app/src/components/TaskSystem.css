@@ -1,0 +1,87 @@
+.task-system {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+}
+
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.task-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+.task-box {
+  border: 2px solid #eee;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  min-height: 120px;
+}
+
+.task-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.perform-button {
+  background: #4285f4;
+  color: white;
+}
+
+.complete-button {
+  background: #34a853;
+  color: white;
+}
+
+.completed-text {
+  color: #34a853;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .task-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Added to CSS */
+.error-message {
+  color: #dc3545;
+  background: #f8d7da;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 15px 0;
+  text-align: center;
+}
+
+.completed-text {
+  color: #28a745;
+  font-weight: bold;
+  padding: 10px;
+  background: #d4edda;
+  border-radius: 4px;
+}

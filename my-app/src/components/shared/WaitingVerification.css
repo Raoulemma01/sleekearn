@@ -1,0 +1,22 @@
+/* components/shared/WaitingVerification.css */
+.verification-waiting {
+    text-align: center;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 2rem auto;
+  }
+  
+  .status-animation {
+    width: 100px;
+    height: 100px;
+    margin: 2rem auto;
+    border-radius: 50%;
+    background: conic-gradient(#4CAF50 0%, #ddd 0%);
+    animation: progress 2s infinite linear;
+    position: relative;
+  }
+  
+  @keyframes progress {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

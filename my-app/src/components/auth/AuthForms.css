@@ -1,0 +1,155 @@
+/* Purple & Yellow Auth Form Theme */
+.auth-container, 
+.auth-form-container {
+  max-width: 450px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: #f8f5ff; /* Light purple background */
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(108, 92, 231, 0.15);
+  border: 2px solid #6c5ce7; /* Primary purple */
+}
+
+.auth-form-container h2 {
+  text-align: center;
+  color: #6c5ce7; /* Primary purple */
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  position: relative;
+}
+
+.auth-form-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #fdcb6e; /* Accent yellow */
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: #2d3436;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid #a8a5e6; /* Light purple border */
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #6c5ce7;
+  box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.2);
+  outline: none;
+}
+
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236c5ce7'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 16px;
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+button[type="submit"]:hover {
+  background: #5b4bc4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(108, 92, 231, 0.3);
+}
+
+button[type="submit"]:disabled {
+  background: #a8a5e6;
+  transform: none;
+  box-shadow: none;
+}
+
+.auth-links {
+  margin-top: 1.75rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.auth-links a {
+  color: #6c5ce7;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.auth-links a:hover {
+  color: #5b4bc4;
+}
+
+.auth-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #fdcb6e; /* Accent yellow */
+  transition: width 0.3s ease;
+}
+
+.auth-links a:hover::after {
+  width: 100%;
+}
+
+.auth-error {
+  padding: 1rem;
+  margin-bottom: 1.75rem;
+  background: #fff0f0;
+  color: #d32f2f;
+  border-radius: 8px;
+  border-left: 4px solid #ff6b6b;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Add floating animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.auth-container {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Custom checkbox */
+.form-group.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.form-group.checkbox input {
+  width: 20px;
+  height: 20px;
+  accent-color: #6c5ce7;
+}
